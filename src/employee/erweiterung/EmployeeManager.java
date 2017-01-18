@@ -1,13 +1,15 @@
 package employee.erweiterung;
 import java.util.ArrayList;
 public class EmployeeManager {
+	
 	private ArrayList<Employee> employees = new ArrayList<Employee>();
 
 	public void addEmployee(Employee e) {
 		employees.add(e);
 	}
 	
-	public ArrayList<Employee> getEmployees(){
+	//liefert die Liste aller Mitarbeiter
+	public ArrayList<Employee> getEmployees() {
 		return employees;
 	}
 

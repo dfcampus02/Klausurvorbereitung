@@ -6,8 +6,11 @@ public class Employee {
 	private String name;
 	private double salary;
 	private String department;
+	//Position
 	private String role;
+	//Vorgesetzter
 	private Employee superior;
+	//Liste der unterstellten Mitarbeiter
 	private ArrayList<Employee>subordinates =new ArrayList<>();
 	
 	public Employee(int empNumber, String name, double salary, String department, String role) {
@@ -25,6 +28,7 @@ public class Employee {
 		this.salary = salary;
 		this.department = department;
 	}
+	//Neuer Mitarbeiter
 	public void addEmployee(Employee e) {
 		subordinates.add(e);
 	}

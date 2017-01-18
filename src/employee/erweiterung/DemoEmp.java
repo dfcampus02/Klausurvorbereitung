@@ -5,6 +5,36 @@ import java.util.ArrayList;
 public class DemoEmp {
 
 	public static void main(String[] args) {
+		Employee ceo = new Employee(1, "Mitarbeiter 1", 10000, "Management", "CEO (Mitarbeiter 1)");
+		Employee cto = new Employee(2, "Mitarbeiter 2", 10000, "Engineering", "CTO (Mitarbeiter 2)");
+		Employee dev1 = new Employee(1, "Mitarbeiter 5", 10000, "Engineering", "DEV (Mitarbeiter 3)");
+		Employee dev2 = new Employee(1, "Mitarbeiter 3", 10000, "Engineering", "DEV (Mitarbeiter 4)");
+		Employee hr = new Employee(1, "Mitarbeiter 4", 10000, "Management", "HR (Mitarbeiter 5)");
+
+		// Mitarbeit von CEO
+		ceo.addEmployee(cto);
+		ceo.addEmployee(dev1);
+
+		// Mitarbeiter von CTO
+		cto.addEmployee(dev2);
+		cto.addEmployee(hr);
+		// Vorgesetzer von CTO
+		cto.setSuperior(ceo);
+
+		// Vorgesetzer von HR
+		dev1.setSuperior(ceo);
+
+		// Vorgesetzer von dev1
+		dev2.setSuperior(cto);
+
+		// Vorgesetzer von dev2
+		hr.setSuperior(cto);
+
+		System.out.println(OrganigramHandler.getChainOfCommand(dev1));
+		System.out.println(OrganigramHandler.processHierachy(cto));
+		System.out.println(OrganigramHandler.processHierachy(ceo, ""));
+		
+		//**************************************************************************************************************************
 
 		EmployeeManager em = new EmployeeManager();
 
@@ -24,6 +54,8 @@ public class DemoEmp {
 			System.out.println(tmpEmployee.toString());
 			// System.out.println(tmpEmployee.getName());
 		}
+		
+		//String Cast
 
 		String sourcestr = "abc";
 		Object tmpvarible = sourcestr;
@@ -57,34 +89,7 @@ public class DemoEmp {
 		// Employee empMaxSalary = em.findByMaxSalary();
 		// System.out.println("has MAX salary -> " + empMaxSalary);
 		//
-		Employee e1 = new Employee(1, "Mitarbeiter 1", 10000, "ceo1");
-		Employee e2 = new Employee(1, "Mitarbeiter 2", 10000, "cto1");
-		Employee e3 = new Employee(1, "Mitarbeiter 5", 10000, "hr1");
-		Employee e4 = new Employee(1, "Mitarbeiter 3", 10000, "dev1");
-		Employee e5 = new Employee(1, "Mitarbeiter 4", 10000, "dev1");
-
-		// Mitarbeit von CEO
-		e1.addEmployee(e2);
-		e1.addEmployee(e3);
-
-		// Mitarbeiter von CTO
-		e2.addEmployee(e4);
-		e2.addEmployee(e5);
-		// Vorgesetzer von CTO
-		e2.setSuperior(e1);
-
-		// Vorgesetzer von HR
-		e3.setSuperior(e1);
-
-		// Vorgesetzer von dev1
-		e4.setSuperior(e2);
-
-		// Vorgesetzer von dev2
-		e5.setSuperior(e2);
-
-		System.out.println(OrganigramHandler.getChainOfCommand(e3));
-		System.out.println(OrganigramHandler.processHierachy(e1));
-		System.out.println(OrganigramHandler.processHierachy(e1, ""));
+		
 	}
 }
 /*

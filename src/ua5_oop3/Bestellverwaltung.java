@@ -27,9 +27,9 @@ public class Bestellverwaltung {
 		return preis;
 	}
 	
-	public double getKosten(int menge, int preis){
+	//public double getKosten(int menge, int preis){
 		
-		return double kosten=
+		
 	}
 	
-}
+
