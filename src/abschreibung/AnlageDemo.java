@@ -12,10 +12,11 @@ public class AnlageDemo {
 		System.out.println(notebook.getRestwert());
 	
 		notebook2.simulate(4, 250);
-		notebook.printAnlage();
 		notebook2.printAnlage();
-		notebook2.renew(300.0, 4);
-		notebook2.printAnlage();
+		
+		System.out.println();
+		Anlage neuesnotebook= notebook2.renew(300, 4);
+		neuesnotebook.printAnlage();
 	}
 
 }
