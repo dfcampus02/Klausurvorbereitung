@@ -52,4 +52,25 @@ public class WasserstandManager {
 		}
 		return wasserstandMax;
 	}
+	
+	public ArrayList<Wasserstand> findForAlarmierung(){
+		ArrayList<Wasserstand> wasserstandAlarm= new ArrayList<>();
+		for (Wasserstand w : wasserstandAlarm) {
+			if (w.getMessWert()<=w.getMessWertFuerAlamierung())
+				wasserstandAlarm.add(w);
+		}
+		
+		return wasserstandAlarm;
+			
+		}
+	public ArrayList<Wasserstand> findByZeitspanne (int von, int bis, String gewaesserName) {
+		
+		ArrayList<Wasserstand> wasserstandZeitspanne= new ArrayList<>();
+		for (Wasserstand w : wasserstand) {
+			if ((w.getZeitpunkt()>=von || w.getZeitpunkt()<=bis)&& gewaesserName.equals(w.getGewaessername()))
+				wasserstandZeitspanne.add(w);
+			
+		}
+		return wasserstandZeitspanne;
+	}
 }

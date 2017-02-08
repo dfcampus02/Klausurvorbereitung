@@ -38,6 +38,7 @@ public class BlackJackDemo {
 			
 			//show players
 			System.out.println(bj);
+			System.out.println(bj.getValue(p2));
 		}
 	}
 

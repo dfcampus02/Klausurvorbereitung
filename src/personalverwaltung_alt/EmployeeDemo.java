@@ -1,4 +1,4 @@
-package personalverwaltung;
+package personalverwaltung_alt;
 
 public class EmployeeDemo {
 

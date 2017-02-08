@@ -73,8 +73,10 @@ private ArrayList<Event> events = new ArrayList<>();
 		HashMap<String,Integer> groupByOrt = new HashMap<>();
 		for(Event e : events) {
 			Integer value = groupByOrt.get(e.getOrt());
+		
 			if(value != null) {
 				groupByOrt.put(e.getOrt(), value+1);
+			
 			} else {
 				groupByOrt.put(e.getOrt(),1);
 			}
