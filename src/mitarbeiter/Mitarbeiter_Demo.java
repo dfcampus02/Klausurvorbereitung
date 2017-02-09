@@ -16,7 +16,7 @@ public class Mitarbeiter_Demo {
 		
 		System.out.println(employees.getSalaryByDepartment());
 		
-		
+		System.out.println(employees.getSalaryByDepartment());
 	}
 
 }
